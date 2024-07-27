@@ -1,0 +1,11 @@
+FROM openjdk:17-oracle
+WORKDIR /app
+COPY target/business-0.0.1-SNAPSHOT.jar /app/business-0.0.1-SNAPSHOT.jar
+COPY wait-for-mysql.sh /wait-for-mysql.sh
+
+RUN chmod +x /wait-for-mysql.sh
+
+EXPOSE 8080
+
+# Use a single ENTRYPOINT with the wait script followed by the java command
+ENTRYPOINT ["/wait-for-mysql.sh", "java", "-jar", "/app/business-0.0.1-SNAPSHOT.jar"]

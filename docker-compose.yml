@@ -1,0 +1,45 @@
+version: '3.8'
+
+networks:
+  springboot-mysql-network:
+    driver: bridge
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: docker-mysql-springboot-demo-db
+    environment:
+      MYSQL_DATABASE: testdb_airplane_business
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./sqlinit/initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
+    networks:
+      - springboot-mysql-network
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      retries: 10
+      interval: 3s
+      timeout: 30s
+
+  app:
+    image: myapp:latest
+    build:
+      context: .
+      dockerfile: DockerFile
+    depends_on:
+      - mysql
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://docker-mysql-springboot-demo-db:3306/testdb_airplane_business?allowPublicKeyRetrieval=true&useSSL=false
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.MySQLDialect
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    ports:
+      - "8080:8080"
+    networks:
+      - springboot-mysql-network
+    entrypoint: ["/wait-for-mysql.sh", "mysql", "--", "java", "-jar", "/app/business-0.0.1-SNAPSHOT.jar"]
+volumes:
+  mysql-data:
