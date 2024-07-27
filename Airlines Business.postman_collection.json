@@ -1,0 +1,479 @@
+{
+	"info": {
+		"_postman_id": "1aec8ea7-ac61-4749-9d48-131331141027",
+		"name": "Airlines Business",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28051488"
+	},
+	"item": [
+		{
+			"name": "Get Total Ticket And Food Sold Amount Of Today",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ticket-and-food-sold",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ticket-and-food-sold"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response 1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ticket-and-food-sold",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ticket-and-food-sold"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 25 Jul 2024 17:12:45 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": \"S100000\",\n    \"responseMessage\": \"Operation is successful.\",\n    \"data\": {\n        \"totalSoldAmountsFromTicket\": 6000,\n        \"totalSoldAmountsFromFoods\": 0\n    }\n}"
+				},
+				{
+					"name": "Sample Response 2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ticket-and-food-sold",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ticket-and-food-sold"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 Jul 2024 04:23:01 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": \"S100000\",\n    \"responseMessage\": \"Operation is successful.\",\n    \"data\": {\n        \"totalSoldAmountsFromTicket\": 0,\n        \"totalSoldAmountsFromFoods\": 4400\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Max Sell Day",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ticket/max-sell-day?fromDate=2024-07-23&toDate=2024-07-28",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ticket",
+						"max-sell-day"
+					],
+					"query": [
+						{
+							"key": "fromDate",
+							"value": "2024-07-23"
+						},
+						{
+							"key": "toDate",
+							"value": "2024-07-28"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response 1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ticket/max-sell-day?fromDate=2024-07-23&toDate=2024-07-28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ticket",
+								"max-sell-day"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2024-07-23"
+								},
+								{
+									"key": "toDate",
+									"value": "2024-07-28"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 Jul 2024 06:37:54 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": \"S100000\",\n    \"responseMessage\": \"Operation is successful.\",\n    \"data\": {\n        \"maxSellDate\": \"2024-07-25\",\n        \"maxSellTicket\": 2\n    }\n}"
+				},
+				{
+					"name": "Sample Response 2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ticket/max-sell-day?toDate=2024-07-28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ticket",
+								"max-sell-day"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2024-07-23",
+									"disabled": true
+								},
+								{
+									"key": "toDate",
+									"value": "2024-07-28"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 Jul 2024 06:47:34 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": \"E000102\",\n    \"responseMessage\": \"Invalid date range\",\n    \"data\": null\n}"
+				},
+				{
+					"name": "Sample Response 3",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ticket/max-sell-day",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ticket",
+								"max-sell-day"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2024-07-23",
+									"disabled": true
+								},
+								{
+									"key": "toDate",
+									"value": "2024-07-28",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 Jul 2024 06:50:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": \"S100000\",\n    \"responseMessage\": \"Operation is successful.\",\n    \"data\": {\n        \"maxSellDate\": \"2024-07-22\",\n        \"maxSellTicket\": 7\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Top 3 Selling Routes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/routes/top-3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"routes",
+						"top-3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response 1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/routes/top-3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"routes",
+								"top-3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 Jul 2024 08:50:40 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": \"S100000\",\n    \"responseMessage\": \"Operation is successful.\",\n    \"data\": [\n        {\n            \"arrivalAirport\": \"new york\",\n            \"destinationAirport\": \"dhaka\",\n            \"totalSellAmount\": 30000\n        },\n        {\n            \"arrivalAirport\": \"rome\",\n            \"destinationAirport\": \"dhaka\",\n            \"totalSellAmount\": 24000\n        },\n        {\n            \"arrivalAirport\": \"london\",\n            \"destinationAirport\": \"dhaka\",\n            \"totalSellAmount\": 20000\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
