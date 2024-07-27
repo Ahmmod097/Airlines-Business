@@ -8,6 +8,4 @@ And we are done, the SpringBoot App will be starting
 
 The postman collection file is : Airlines Business.postman_collection.json
 
-Similarly, you can dockerize your application with MySQL.
-
 Thank You :)
